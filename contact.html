@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" href="images/logo.png" />
+
+    <style>
+        /* Hide contact content until passcode is correct */
+        #contact-content {
+            display: none;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+            const correctPasscode = "1588"; // Replace with your desired passcode
+            let attempt = prompt("Enter passcode to access this page:");
+
+            while (attempt !== correctPasscode) {
+                if (attempt === null) {
+                    // User pressed Cancel
+                    alert("Access cancelled.");
+                    window.location.href = "index.html"; // Redirect to home
+                    return;
+                }
+                attempt = prompt("Incorrect passcode. Please try again:");
+            }
+
+            // Correct passcode entered
+            document.getElementById("contact-content").style.display = "block";
+        };
+    </script>
     
     
 </head>
@@ -27,7 +54,7 @@
             </ul>
         </nav>
 
-        <main class="content contact-info">
+        <main id = "contact-content" class="content contact-info">
             <h1> Thank you for visiting my site! </h1>
             <img src="images/red.png" alt="UOE" class="red"/>
             <p><i class="bi bi-telephone-fill"></i> +44 7394594675</p>
