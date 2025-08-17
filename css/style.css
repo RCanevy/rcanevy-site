@@ -269,7 +269,7 @@ img.gradbw {
     }
 
     .content {
-        font-size: 10px;
+        font-size: 12px;
 
     }
 
@@ -305,8 +305,9 @@ img.gradbw {
       max-width: 95%;
       margin: 0 auto 20px auto;
       padding: 20px;
-      font-size: 18px;     /* reduce size */
+      font-size: 12px;     /* reduce size */
       text-align: justify; /* neat paragraph flow */
+        
     }
   
     /* 5. Observatory image (ob) */
