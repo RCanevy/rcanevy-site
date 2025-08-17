@@ -180,9 +180,8 @@ nav ul li {
 }
 
 .lab-image {
-    max-width: none !important;
-    width: 420px !important;
-    height: auto !important;
+    width: 700px;
+    height: auto;
     display: block;
     margin: 20px auto;
 }
@@ -196,9 +195,8 @@ nav ul li {
 }
 
 .ob {
-    max-width: none !important;
-    width: 420px !important;
-    height: auto !important;
+    max-width: 420px;
+    height: auto;
     display: block;
     margin: 20px auto;
 }
@@ -212,8 +210,8 @@ nav ul li {
 }
 
 .paper {
-    max-width: none !important;
-    width: auto !important;
+    max-width: 700px;
+    width: auto;
     height: auto;
     display: block;
     margin: 20px auto;
@@ -221,7 +219,7 @@ nav ul li {
 }
 
 .table {
-    max-width: none !important;
+    max-width: 700px;
     width: auto;
     height: auto;
     display: block;
@@ -264,13 +262,73 @@ img.gradbw {
     margin-right: 10px;
 }
 
+
 @media (max-width: 768px) {
     .image-row img {
         max-width: 80%;
     }
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    /* 1. Nav bar - move it down so Home isn’t hidden */
+    nav {
+      position: relative;  /* no overlap */
+      height: auto;        /* expand with content */
+      padding: 10px 0;
     }
-}
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+  
+    /* 2. gradbw image - make it larger */
+    .gradbw {
+      max-width: 100%; /* fill screen width */
+      height: auto;
+    }
+  
+    /* 3. lab-image - shrink it */
+    .lab-image {
+      max-width: 90%;
+      height: auto;
+    }
+  
+    /* 4. Coding-section text not squashed */
+    .coding-section {
+      max-width: 95%;
+      margin: 0 auto 20px auto;
+      padding: 20px;
+      font-size: 18px;     /* reduce size */
+      text-align: justify; /* neat paragraph flow */
+    }
+  
+    /* 5. Observatory image (ob) */
+    .ob {
+      max-width: 95%;
+      height: auto;
+    }
+  
+    /* 6. Dissertation paper image */
+    .paper {
+      max-width: 95%;
+      height: auto;
+    }
+
+    .table {
+        max-width: 95%;
+        height: auto;
+      }
+    
+  
+    /* 7. General images inside .content */
+    .content img {
+      max-width: 95%;
+      height: auto;
+    }
+  
+    /* 8. Knife image */
+    .knife {
+      max-width: 50%;  /* smaller than others */
+      height: auto;
+    }
+  }
 
