@@ -267,6 +267,14 @@ img.gradbw {
     .image-row img {
         max-width: 80%;
     }
+
+    .content {
+        font-size: 18px;
+
+    }
+
+    
+    
     /* 1. Nav bar - move it down so Home isn’t hidden */
     nav {
       position: relative;  /* no overlap */
