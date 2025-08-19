@@ -278,7 +278,7 @@ img.gradbw {
     /* 1. Nav bar - move it down so Home isn’t hidden */
     nav {
      position: absolute;
-     top: 40px;   /* adjust until nav sits neatly under the red bar */
+     top: 30px;   /* adjust until nav sits neatly under the red bar */
      left: 0;
      width: 100%;
      height: auto; /* allow nav height to expand with content */
