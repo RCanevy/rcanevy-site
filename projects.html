@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Projects - My Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="projects-page-body">
+    <div class="background"></div>
+    <div class="red-overlay"></div>
+
+    <div class="white-overlay">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="projects.html" class="nav-button">Projects</a></li>
+                <li><a href="university.html" class="nav-button">University</a></li>
+                <li><a href="contact.html" class="nav-button">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="content projects-page">
+            <h1>Projects</h1>
+            <p class="projects-intro">
+                A selection of projects spanning coding, data, physics, and tooling. 
+                Hover over each box to see a brief summary. Some cards link out to 
+                external resources, including my GitHub and example documents. I have split a conceptually
+                simple task tracking app into multiple projects to test various branches in the 
+                SE industry. Also included here are personal gaming dev projects. For my journey
+                in python, please refer to the University page. 
+            </p>
+
+               <div class="projects-grid">
+                <!-- Card 1: C# project (CHANGE GITHUB LINK) -->
+                
+                <div class="project-card project-card--one">
+                    <div class="card-front">
+                        <img src="images/The_Medic.png" alt="Project Image">
+                        <div class="project-label">C# Blender Unity</div>
+                        <div class="project-title">FPS RPG: The Medic</div>
+                    </div>
+                
+                    <div class="card-back">
+                        <p>FPS RPG under construction, a Unity C# project exploring real-time combat physics simulating weapon damage on organs and bones. </p>
+                        
+                    </div>
+                </div>
+
+               
+
+                <!-- Card 2: TaskTracker (Project 2) -->
+                <a href="https://github.com/RCanevy/TaskTrackerAPI/blob/main/README.md" target="_blank"
+                    class="project-card project-card--two">
+                    
+                    <div class="card-front">
+                        <img src="images/aws.png" alt="PDF preview">
+                        <span class="project-label">C#</span>
+                        <h3 class="project-title">Mini Task Tracker API</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <p>
+                            A lightweight C# task-tracking API built with ASP.NET Core minimal APIs and deployed to AWS Elastic Beanstalk.
+                            The application uses an in-memory repository, RESTful endpoints, and follows clean API design. 
+                            A publish build was packaged and deployed to a fully managed .NET runtime environment on AWS, 
+                            complete with load balancer, autoscaling group, S3 artifact storage, and application health monitoring.
+                        </p>
+                    </div>
+                </a>
+
+
+                <!-- Card 3: Task Tracker Part 2 Project 3 -->
+                <a href="https://github.com/RCanevy/task-tracker-frontend/blob/main/task-tracker-frontend/README.md" target="_blank"
+                class="project-card project-card--one">
+
+                <div class="card-front">
+                    <img src="images/react.png" alt="PDF preview">
+                    <span class="project-label">Java Script C#</span>
+                    <h3 class="project-title">Full-Stack React & .NET Application</h3>
+                </div>
+
+                <div class="card-back">
+                    <p>
+                        I built a full task-tracking application using a React frontend and 
+                        a C# ASP.NET Core minimal API backend. On the frontend, 
+                        I implemented a component-driven UI with React hooks for state management, 
+                        Axios for communicating with the API, and 
+                        Vitest with React Testing Library for unit testing. 
+                        On the backend, I designed REST endpoints for creating, 
+                        reading, completing, and deleting tasks using an in-memory 
+                        repository, and configured CORS to allow seamless integration 
+                        with the React app.
+                    </p>
+                </div>
+                </a>
+
+                <!-- Card 4: DevOps Project 1 -->
+                <a href="https://github.com/RCanevy/software-engineering-ci-demo/blob/main/README.md" target="_blank" class="project-card project-card--three">
+                    <div class="card-front">
+                        <img src="images/azure.png" alt="PDF preview">
+                        <span class="project-label">DevOps Javascript</span>
+                        <h3 class="project-title">CI/CD API mini project</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <p>
+                            A lightweight Node.js API built with Express and fully tested
+                         using Jest and Supertest. The project includes a GitHub 
+                         Actions CI pipeline that automatically installs dependencies, 
+                         runs the test suite, and validates every commit pushed 
+                         to the main branch. Deployed on Azure.
+                        </p>
+                    </div>
+                </a>
+                
+
+                
+
+                <!-- Project 4 -->
+                <a href="https://github.com/RCanevy/Project-4/tree/main" target="_blank" class="project-card project-card--one">
+                    <div class="card-front">
+                        <img src="images/docker.png" alt="PDF preview">
+                        <span class="project-label">Javascript</span>
+                        <h3 class="project-title">Docker & Kubernetes Deployment</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <p>
+                            I built a lightweight Node.js info microservice, containerised it with Docker, 
+                            and deployed it to a Kubernetes cluster using Minikube. I wrote the 
+                            Deployment and Service manifests from scratch, added liveness and readiness 
+                            probes, and configured the service to run as multiple replicas with 
+                            automatic rollouts and scaling.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Project 5 -->
+                <a href="https://github.com/RCanevy/Project-5/blob/main/README.md" target="_blank" class="project-card project-card--two">
+                    <div class="card-front">
+                        <img src="images/spring.jpg" alt="PDF preview">
+                        <span class="project-label">TypeScript HTML CSS</span>
+                        <h3 class="project-title">Full-Stack Spring Boot & Angular Application</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <p>
+                            For the final part of the series I developed a full-stack task management 
+                            system with a Spring Boot REST API and an Angular frontend. 
+                            The backend uses Spring Web, JPA, 
+                            and an H2 database to handle task storage and retrieval through a clean, 
+                            layered architecture. On the frontend, I built responsive standalone 
+                            Angular components with a shared service for API communication, 
+                            enabling users to create, view, complete, and delete tasks in real time. 
+                            
+
+                        </p>
+                    </div>
+                </a>
+
+               
+
+                
+            </div>
+        </main>
+    </div>
+
+    <!-- Optional: walker gif here if you want it on Projects page too -->
+    <!-- <img id="walker" src="images/stickman.gif" alt="Walking animation"> -->
+    <!-- And the same walker script if desired -->
+
+</body>
+</html>
