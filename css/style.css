@@ -1,4 +1,5 @@
 
+
 /* Set background image */
 body, html {
     margin: 0;
@@ -36,7 +37,14 @@ body, html {
     padding: 120px 20px 20px 20px;
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
     z-index: 1;
+}
+
+.home-page .white-overlay {
+    background-color: #ffffff;  /* pure white */
+    opacity: 1 !important;      /* remove translucency on home page */
+    
 }
 
 .logo {
@@ -95,7 +103,7 @@ nav ul li {
 
 .content {
   
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0 auto;         /* centers the whole block horizontally */
     max-width: 700px;       /* limits width so text lines aren’t too long */
     text-align: justify;
@@ -180,7 +188,7 @@ nav ul li {
 }
 
 .lab-image {
-    width: 700px;
+    width: 700px; /* or a specific width you prefer for desktop */
     height: auto;
     display: block;
     margin: 20px auto;
@@ -262,26 +270,234 @@ img.gradbw {
     margin-right: 10px;
 }
 
+/* Widget */
+
+.slideshow-container {
+    position: relative;
+    max-width: 600px; /* adjust to fit */
+    margin: 20px auto;
+    height: 250px;
+  }
+  
+.slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+
+
+/* Stickman walker animation */
+.home-page #walker {
+    position: absolute;
+    bottom: 1%;       /* vertical position scales with screen height */
+    left: 50%;         /* horizontal position scales with overlay width */
+    transform: translateX(-50%);  /* keeps it visually consistent */
+    width: 8vw;        /* scales with screen width */
+    max-width: 120px;  /* prevents being too large on big screens */
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
+.walker-animate {
+    animation: walkAcross 2.2s linear forwards;
+    opacity: 1;
+}
+
+@keyframes walkAcross {
+    0% {
+        left: 1200px; /* just off-screen left */
+    }
+    100% {
+        left: calc(100% + 60px); /* walks off white overlay right */
+    }
+}
+
+/*Project Page*/
+/* -------- Projects page layout -------- */
+
+.projects-page {
+    max-width: 1000px;
+    font-size: 20px;
+}
+
+.projects-intro {
+    margin-bottom: 30px;
+}
+
+/* 4 x 2 style grid (up to 8 cards, responsive) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Base project card */
+.project-card {
+    position: relative;
+    width: 100%;         /* fill the whole grid column */
+    height: auto;
+    min-height: 240px;       /* keep your fixed height */
+    margin: 0;           /* no centering inside column */
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    background: #111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.948);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    border: 2px solid red;
+
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.877);
+}
+
+
+
+/* Both faces fill the card */
+.card-front,
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.project-card, 
+.card-front, 
+.card-back, 
+.card-front img {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- FRONT (image + label + title) ---------- */
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    transition: opacity 0.25s ease;
+    box-sizing: border-box;
+}
+
+/* IMAGE: must fully fill the card */
+.card-front img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    min-width: 100%; 
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9;
+    
+}
+
+/* Label pill in top-left */
+.project-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+/* Title bar at bottom */
+.project-title {
+    position: absolute; /* CHANGE THIS from relative to absolute */
+    bottom: 0;          /* Add this to force it to the bottom edge */
+    left: 0;            /* Ensure it aligns to the left edge */
+    right: 0;           /* Ensure it aligns to the right edge */
+    z-index: 1;
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 18px;
+    font-weight: 600;
+    background: rgba(0,0,0,0.6);
+}
+
+/* ---------- BACK (paragraph text) ---------- */
+
+.card-back {
+    position: relative;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    background: white;
+    opacity: 0;
+    color: transparent;           /* hidden by default */
+    transition: opacity 0.25s ease, color 0.25s ease;
+}
+.project-card:hover .card-back {
+    opacity: 1;
+    color: #222;                  /* becomes readable */
+}
+
+/* On hover: hide front, show back */
+.project-card:hover .card-front {
+    opacity: 0;
+}
+
+.project-card:hover .card-back {
+    opacity: 1;
+}
+
+/* Category colours */
+.project-card--cs .project-label {
+    background: #33d170;
+}
+.project-card--uni .project-label {
+    background: #b30059;
+}
+.project-card--devops .project-label {
+    background: #00796b;
+}
+.project-card--data .project-label {
+    background: #fa0101;
+}
+
+.project-card--one .project-label {
+    background: #000000;
+}
+
+.project-card--two .project-label {
+    background: #ec3434;
+}
+
+.project-card--three .project-label {
+    background: hsl(0, 48%, 46%);
+}
+
+/* Mobile Friendly Code */
+
 
 @media (max-width: 768px) {
     .image-row img {
         max-width: 80%;
     }
-
-    .content {
-        font-size: 12px;
-
-    }
-
-    
-    
     /* 1. Nav bar - move it down so Home isn’t hidden */
     nav {
-     position: absolute;
-     top: 30px;   /* adjust until nav sits neatly under the red bar */
-     left: 0;
-     width: 100%;
-     height: auto; /* allow nav height to expand with content */
+        position: absolute;
+        top: 30px;   /* adjust until nav sits neatly under the red bar */
+        left: 0;
+        width: 100%;
+        height: auto; /* allow nav height to expand with content */
     }
     nav ul {
       flex-direction: column;
@@ -311,9 +527,8 @@ img.gradbw {
       max-width: 95%;
       margin: 0 auto 20px auto;
       padding: 20px;
-      font-size: 12px;     /* reduce size */
+      font-size: 18px;     /* reduce size */
       text-align: justify; /* neat paragraph flow */
-        
     }
   
     /* 5. Observatory image (ob) */
@@ -346,4 +561,6 @@ img.gradbw {
       height: auto;
     }
   }
+
+  
 
